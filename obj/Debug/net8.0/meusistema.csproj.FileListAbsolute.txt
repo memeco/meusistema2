@@ -1,0 +1,15 @@
+C:\Users\Daniel\meusistema\bin\Debug\net8.0\meusistema.exe
+C:\Users\Daniel\meusistema\bin\Debug\net8.0\meusistema.deps.json
+C:\Users\Daniel\meusistema\bin\Debug\net8.0\meusistema.runtimeconfig.json
+C:\Users\Daniel\meusistema\bin\Debug\net8.0\meusistema.dll
+C:\Users\Daniel\meusistema\bin\Debug\net8.0\meusistema.pdb
+C:\Users\Daniel\meusistema\obj\Debug\net8.0\meusistema.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Daniel\meusistema\obj\Debug\net8.0\meusistema.AssemblyInfoInputs.cache
+C:\Users\Daniel\meusistema\obj\Debug\net8.0\meusistema.AssemblyInfo.cs
+C:\Users\Daniel\meusistema\obj\Debug\net8.0\meusistema.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\meusistema\obj\Debug\net8.0\meusistema.sourcelink.json
+C:\Users\Daniel\meusistema\obj\Debug\net8.0\meusistema.dll
+C:\Users\Daniel\meusistema\obj\Debug\net8.0\refint\meusistema.dll
+C:\Users\Daniel\meusistema\obj\Debug\net8.0\meusistema.pdb
+C:\Users\Daniel\meusistema\obj\Debug\net8.0\meusistema.genruntimeconfig.cache
+C:\Users\Daniel\meusistema\obj\Debug\net8.0\ref\meusistema.dll
