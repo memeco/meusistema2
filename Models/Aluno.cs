@@ -18,9 +18,18 @@ namespace CadastroNotas.Models
         }
 
         //criação da função de média
-        public double CalcularMedia()
+        public string CalcularMedia()
         {
-            return (Nota1 + Nota2) / 2;
+            double media = (Nota1 + Nota2) / 2;
+
+            if (media >= 7.0)
+            {
+                return "Aprovado com média " + media.ToString("F2");
+            }
+            else
+            {
+                return "Reprovado com média " + media.ToString("F2");
+            }
         }
     }
 }
