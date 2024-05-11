@@ -1,5 +1,4 @@
 using System;
-using CadastroNotas.Controllers;
 
 namespace CadastroNotas.Views
 {
@@ -12,13 +11,6 @@ namespace CadastroNotas.Views
             Console.WriteLine("2. Mostrar Boletim");
             Console.WriteLine("3. Sair");
             Console.Write("Escolha uma opção: ");
-        }
-
-        public static void ExibirBoletim(AlunoController controller)
-        {
-            Console.WriteLine("===== Boletim =====");
-            controller.MostrarBoletim();
-            Console.WriteLine("====================");
         }
 
         public static void LimparTela()

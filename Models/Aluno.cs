@@ -1,78 +1,40 @@
 using System;
-using System.Collections.Generic;
 
 namespace CadastroNotas.Models
 {
     public class Aluno
     {
         public string Nome { get; set; }
-        public List<Materia> Materias { get; set; }
+        public double Nota1Portugues { get; set; }
+        public double Nota2Portugues { get; set; }
+        public double Nota1Matematica { get; set; }
+        public double Nota2Matematica { get; set; }
 
         public Aluno(string nome)
         {
             Nome = nome;
-            Materias = new List<Materia>();
         }
 
-        public void AdicionarMateria(string nomeMateria, double nota1, double nota2)
+        public double CalcularMediaPortugues()
         {
-            Materias.Add(new Materia(nomeMateria, nota1, nota2));
+            return (Nota1Portugues + Nota2Portugues) / 2;
         }
 
-        public void AdicionarRecuperacao(string nomeMateria, double notaRecuperacao)
+        public double CalcularMediaMatematica()
         {
-            foreach (var materia in Materias)
-            {
-                if (materia.Nome == nomeMateria)
-                {
-                    materia.NotaRecuperacao = notaRecuperacao;
-                    break;
-                }
-            }
+            return (Nota1Matematica + Nota2Matematica) / 2;
         }
 
-        public List<string> CalcularStatusMaterias()
+        public string SituacaoPortugues()
         {
-            List<string> statusMaterias = new List<string>();
-
-            foreach (var materia in Materias)
-            {
-                double media = (materia.Nota1 + materia.Nota2) / 2;
-
-                if (media >= 7.0)
-                {
-                    statusMaterias.Add($"{materia.Nome}: Aprovado com média {media.ToString("F2")}");
-                }
-                else
-                {
-                    if (materia.NotaRecuperacao != null && (media + materia.NotaRecuperacao) / 2 >= 5.0)
-                    {
-                        statusMaterias.Add($"{materia.Nome}: Aprovado após recuperação com média {(media + materia.NotaRecuperacao) / 2:F2}");
-                    }
-                    else
-                    {
-                        statusMaterias.Add($"{materia.Nome}: Reprovado com média {media.ToString("F2")}");
-                    }
-                }
-            }
-
-            return statusMaterias;
+            double media = CalcularMediaPortugues();
+            return media >= 7.0 ? "Aprovado" : "Reprovado";
         }
-    }
 
-    public class Materia
-    {
-        public string Nome { get; set; }
-        public double Nota1 { get; set; }
-        public double Nota2 { get; set; }
-        public double? NotaRecuperacao { get; set; }
-
-        public Materia(string nome, double nota1, double nota2)
+        public string SituacaoMatematica()
         {
-            Nome = nome;
-            Nota1 = nota1;
-            Nota2 = nota2;
-            NotaRecuperacao = null;
+            double media = CalcularMediaMatematica();
+            return media >= 7.0 ? "Aprovado" : "Reprovado";
         }
     }
 }

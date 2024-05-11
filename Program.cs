@@ -22,29 +22,20 @@ namespace CadastroNotas
                         View.LimparTela();
                         Console.WriteLine("Digite o nome do aluno:");
                         string nomeAluno = Console.ReadLine();
-                        Console.WriteLine("Digite as notas para o aluno (Nota1 Nota2):");
-                        string[] notas = Console.ReadLine().Split(' ');
+                        Console.WriteLine("Digite a nota 1 de Português:");
+                        double nota1Portugues = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Digite a nota 2 de Português:");
+                        double nota2Portugues = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Digite a nota 1 de Matemática:");
+                        double nota1Matematica = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Digite a nota 2 de Matemática:");
+                        double nota2Matematica = Convert.ToDouble(Console.ReadLine());
 
-                        if (notas.Length != 2)
-                        {
-                            Console.WriteLine("Por favor, insira duas notas separadas por espaço.");
-                            break;
-                        }
-
-                        double nota1, nota2;
-
-                        if (!double.TryParse(notas[0], out nota1) || !double.TryParse(notas[1], out nota2))
-                        {
-                            Console.WriteLine("Por favor, insira notas válidas.");
-                            break;
-                        }
-
-                        controller.CriarAluno(nomeAluno, nota1, nota2);
-                        Console.WriteLine("Aluno cadastrado com sucesso!");
+                        controller.CadastrarAluno(nomeAluno, nota1Portugues, nota2Portugues, nota1Matematica, nota2Matematica);
                         break;
                     case "2":
                         View.LimparTela();
-                        View.ExibirBoletim(controller);
+                        controller.MostrarBoletim();
                         break;
                     case "3":
                         sair = true;
