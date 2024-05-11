@@ -11,7 +11,8 @@ namespace CadastroNotas.Controllers
         public void CriarAluno(string nome, double nota1, double nota2)
         {
             aluno = new Aluno(nome);
-            aluno.AdicionarMateria("Matéria", nota1, nota2);
+            aluno.AdicionarMateria("Português", nota1, nota2);
+            aluno.AdicionarMateria("Matemática", nota1, nota2);
         }
 
         public void AdicionarNotas(double nota1, double nota2)
