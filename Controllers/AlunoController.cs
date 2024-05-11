@@ -6,30 +6,37 @@ namespace CadastroNotas.Controllers
 {
     public class AlunoController
     {
-        //campo privado para armazenar a lista de objetos 'Aluno' 
-        private List<Aluno> alunos;
+        private Aluno aluno;
 
-        //construtor que inicializa a lista de alunos
-        public AlunoController()
+        public void CriarAluno(string nome, double nota1, double nota2)
         {
-            alunos = new List<Aluno>();
+            aluno = new Aluno(nome);
+            aluno.AdicionarMateria("Matéria", nota1, nota2);
         }
 
-        //método público que permite cadastrar um novo aluno na lista
-        public void CadastrarAluno(string nome, double nota1, double nota2)
+        public void AdicionarNotas(double nota1, double nota2)
         {
-            alunos.Add(new Aluno(nome, nota1, nota2));
-        }
-
-        public void MostrarBoletim(){
-            Console.WriteLine("===Boletim===");
-            foreach (var aluno in alunos)
+            if (aluno == null)
             {
-                Console.WriteLine($"Aluno: {aluno.Nome}");
-                Console.WriteLine($"Nota 1: {aluno.Nota1}");
-                Console.WriteLine($"Nota 2: {aluno.Nota2}");
-                Console.WriteLine($"Média: {aluno.CalcularMedia()}");
-                Console.WriteLine("====================");
+                Console.WriteLine("Por favor, crie um aluno antes de adicionar notas.");
+                return;
+            }
+
+            aluno.AdicionarMateria("Matéria", nota1, nota2);
+        }
+
+        public void MostrarBoletim()
+        {
+            if (aluno == null)
+            {
+                Console.WriteLine("Nenhum aluno cadastrado.");
+                return;
+            }
+
+            var statusMaterias = aluno.CalcularStatusMaterias();
+            foreach (var status in statusMaterias)
+            {
+                Console.WriteLine(status);
             }
         }
     }

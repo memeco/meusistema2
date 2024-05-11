@@ -1,10 +1,10 @@
 using System;
-using System.Collections.Generic;
 using CadastroNotas.Controllers;
 
 namespace CadastroNotas.Views
 {
-    public class View{
+    public class View
+    {
         public static void ExibirMenu()
         {
             Console.WriteLine("===== Cadastro de Alunos =====");
