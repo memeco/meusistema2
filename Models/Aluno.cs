@@ -1,14 +1,20 @@
-using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CadastroNotas.Models
 {
+    [Table("Alunos")]
     public class Aluno
     {
+        [Key]
+        public int Id { get; set; }
         public string Nome { get; set; }
         public double Nota1Portugues { get; set; }
         public double Nota2Portugues { get; set; }
         public double Nota1Matematica { get; set; }
         public double Nota2Matematica { get; set; }
+
+        public Aluno() {}
 
         public Aluno(string nome)
         {
