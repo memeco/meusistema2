@@ -6,41 +6,27 @@ namespace CadastroNotas.Models
     [Table("Alunos")]
     public class Aluno
     {
-        [Key]
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public double Nota1Portugues { get; set; }
-        public double Nota2Portugues { get; set; }
-        public double Nota1Matematica { get; set; }
-        public double Nota2Matematica { get; set; }
+        public string NomeCompleto {get; private set;}
+        public string Matricula { get; private set; }
+        public string Senha { get; private set; }
+        private List<String> Disciplinas { get; set; } = new List<String>();
+        public int Presenca { get; private set; }
 
-        public Aluno() {}
-
-        public Aluno(string nome)
+        public Aluno(string nomeCompleto, string matricula, string senha, int presenca)
         {
-            Nome = nome;
+            NomeCompleto = nomeCompleto;
+            Matricula = matricula;
+            Senha = senha;
+            Presenca = presenca;
         }
 
-        public double CalcularMediaPortugues()
+
+        // Método para adicionar disciplinas
+        public void AdicionarDisciplina(string disciplina)
         {
-            return (Nota1Portugues + Nota2Portugues) / 2;
+            Disciplinas.Add(disciplina);
         }
 
-        public double CalcularMediaMatematica()
-        {
-            return (Nota1Matematica + Nota2Matematica) / 2;
-        }
 
-        public string SituacaoPortugues()
-        {
-            double media = CalcularMediaPortugues();
-            return media >= 7.0 ? "Aprovado" : "Reprovado";
-        }
-
-        public string SituacaoMatematica()
-        {
-            double media = CalcularMediaMatematica();
-            return media >= 7.0 ? "Aprovado" : "Reprovado";
-        }
     }
 }
