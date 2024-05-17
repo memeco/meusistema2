@@ -1,11 +1,6 @@
 #Cadastro de Notas de Alunos
 Este é um simples programa de cadastro de notas de alunos desenvolvido em C# utilizando o padrão de arquitetura MVC (Model-View-Controller) para separação de responsabilidades.
 
-#Como Clonar o Repositório
-Para clonar este repositório, abra o terminal e execute o seguinte comando:
-
-git clone https://github.com/seu-usuario/cadastro-notas-alunos.git
-
 Substitua seu-usuario pelo seu nome de usuário do GitHub.
 
 #Como Instalar e Executar o Programa
