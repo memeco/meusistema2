@@ -1,15 +1,27 @@
-namespace ProgramaEscolar
+using System;
+
+namespace CadastroNotas.Models
 {
     public class Usuarios
     {
-        public string Professor{get; set;}
-            public string Diretores{get; set;}
-            public int Senha{get; set;}
+        public int Senha { get; set; }
+        public string Login { get; set; }
 
-        public Usuarios(string professor, string diretores, int senha){
-            Professor = professor;
-            Diretores = diretores;
+        public Usuarios(int senha, string login)
+        {
             Senha = senha;
+            Login = login;
+        }
+
+        public static Usuarios LoginUsuario()
+        {
+            Console.WriteLine("Favor insira seu login:");
+            string login = Console.ReadLine();
+
+            Console.WriteLine("Insira sua senha:");
+            int senha = int.Parse(Console.ReadLine());
+
+            return new Usuarios(senha, login);
         }
     }
 }
